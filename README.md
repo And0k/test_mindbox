@@ -3,5 +3,5 @@
  - test_group_sum_2()
 
 ## requirements
- - Python 3.8
+ - Python 3.8+
  - numpy
