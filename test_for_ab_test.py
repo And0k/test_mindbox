@@ -9,7 +9,7 @@ import numpy as np
 
 def sum_digits(n: np.ndarray) -> np.ndarray:
     """
-    Sum the digits in each array element
+    Sums the digits in each array element
     :param n: integer array
     """
     s = n % 10
@@ -24,7 +24,7 @@ def group_sum(id_start: int, id_end: int) -> np.ndarray:
      groups are defined by the sum of their digits
     :param id_start: ID range start
     :param id_end: ID range end
-    :return: numpy array: sums of IDs in each group, index of array element is a group number
+    :return: numpy array: sums of IDs in each group. Index of array element is a group number
     """
     # create IDs
     customers_id = np.arange(id_start, id_end)
@@ -34,25 +34,26 @@ def group_sum(id_start: int, id_end: int) -> np.ndarray:
     return np.bincount(customers_group)
 
 
+# Required functions ##################################################################################################
+
+
 def test_group_sum_1(n_customers: int) -> np.ndarray:
     """
     Sum of customers in each group, when customers IDs is a range from 0 to ``n_customers`` and
      groups are defined by the sum of their digits
     :param n_customers: customers number
-    :return:
+    :return: numpy array: sums of IDs in each group. Index of array element is a group number
     """
     return group_sum(0, n_customers)
 
-
-# Required functions ##################################################################################################
 
 def test_group_sum_2(n_customers: int, n_first_id: int) -> np.ndarray:
     """
     Sum of customers in each group, when customers IDs is a range from ``n_first_id`` to
     ``n_first_id`` +``n_customers`` and groups IDs are defined by the sum of their digits
     :param n_customers: customers number
-    :param n_first_id: starting customer' ID
-    :return:
+    :param n_first_id: first client ID
+    :return: numpy array: sums of IDs in each group. Index of array element is a group number
     """
     return group_sum(n_first_id, n_first_id + n_customers)
 
